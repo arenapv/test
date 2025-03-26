@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --background-color: #f4f4f4;
+            --topbar: #000;
+            --divider-color: #c0c0c0;
+            --email-link-color: #999898;
+            --link-color: #fe9b00;
+            --link-hover-active: #000;
+            --heading-color: #090909;
+            --text-color: #5d5d5d;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        html,
+        body {
+            min-width: 100%;
+            position: absolute;
+        }
+
+        .container-fluid {
+            width: 100%;
+            height: auto;
+            background-color: var(--background-color);
+        }
+
+        .topbar {
+            width: 100%;
+            height: 17px;
+            background-color: var(--topbar);
+        }
+
+        .container {
+            width: 960px;
+            height: auto;
+            margin: auto;
+        }
+
+        .navbar {
+            height: 100px;
+            margin: 20px auto;
+        }
+
+        .navbar>div {
+            float: left;
+        }
+
+        .navbar>div:nth-child(1) {
+            width: 183px;
+            height: 100px;
+        }
+
+        .navbar>div:nth-child(2) {
+            width: 777px;
+            height: 100px;
+            text-align: right;
+        }
+
+        .navbar>div:nth-child(2) a {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            color: var(--email-link-color);
+            text-decoration: none;
+        }
+
+        .navbar>div:nth-child(2) a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar>div:nth-child(2) ul {}
+
+        .navbar>div:nth-child(2) ul li {
+            list-style-type: none;
+            display: inline;
+            margin: 0 0 0 55px;
+        }
+
+        .navbar>div:nth-child(2) ul li a {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--link-color);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .navbar>div:nth-child(2) ul li a:hover,
+        .navbar>div:nth-child(2) ul li a.active {
+            color: var(--link-hover-active);
+            text-decoration: none;
+        }
+
+        .header {
+            padding: 20px 0;
+            border-top: 1px solid var(--divider-color);
+            border-bottom: 1px solid var(--divider-color);
+        }
+
+        .text-cols {
+            content: "";
+            display: table;
+            overflow: auto;
+        }
+
+        .text-cols>div {
+            width: 283px;
+            float: left;
+        }
+
+        .text-cols>div h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: var(--heading-color);
+        }
+
+        .text-cols>div hr {
+            border-top: 6px solid #000;
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+        }
+
+        .text-cols>div p,
+        li {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: var(--text-color);
+            line-height: 20px;
+        }
+
+        .text-cols>div p em {
+            color: #090909;
+        }
+
+        .text-cols>div ul {
+            padding: 0;
+        }
+
+        .text-cols>div li {
+            list-style-type: none;
+            list-style-image: url(images/check-symbol.jpg);
+            margin-left: 23px;
+        }
+
+        .text-cols>div li:nth-child(2) {
+            margin: 10px 23px;
+        }
+
+        .text-cols>div:nth-child(2) {
+            margin: 0 55.5px;
+        }
+
+        .text-cols>div a {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: var(--link-color);
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .text-cols>div a:hover {
+            color: #000;
+        }
+
+        .text-cols>div a i {
+            color: #000;
+        }
+
+        .portfolio {
+            content: "";
+            display: table;
+            overflow: auto;
+            padding: 10px 0 20px 0;
+            border-top: 1px solid var(--divider-color);
+            border-bottom: 1px solid var(--divider-color);
+        }
+
+        .portfolio h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: var(--heading-color);
+        }
+
+        .portfolio ul {
+            padding: 0;
+        }
+
+        .portfolio ul li {
+            list-style-type: none;
+            display: inline;
+            float: left;
+            margin: 0 33.33px 0 0;
+        }
+
+        .portfolio ul li:last-child {
+            margin: 0;
+        }
+
+        .updates {
+            content: "";
+            overflow: auto;
+            display: table;
+        }
+
+        .updates>div {
+            float: left;
+        }
+
+        .updates>div h4 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--heading-color);
+        }
+
+        .updates>div p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: var(--text-color);
+            line-height: 20px;
+        }
+
+        .updates>div:nth-child(1) {
+            width: 724px;
+        }
+
+        .updates>div:nth-child(2) {
+            width: 236px;
+        }
+
+        .updates>div:nth-child(2) ul {
+            padding: 0;
+        }
+
+        .updates>div:nth-child(2) ul li {
+            list-style-type: none;
+            display: inline;
+            margin: 0 10px 0 0;
+        }
+
+        .footer {
+            content: "";
+            overflow: auto;
+            display: table;
+            width: 100%;
+            background-color: #e2e2e2;
+            padding: 20px 0;
+        }
+
+        .footer>div>div {
+            float: left;
+        }
+
+        .footer>div>div:nth-child(1) {
+            width: 841px;
+        }
+
+        .footer>div>div:nth-child(1) a,
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .footer>div>div:nth-child(1) a:hover {
+            text-decoration: underline;
+        }
+
+        .footer>div>div:nth-child(2) {
+            width: 119px;
+        }
+
+        /* @media screen and (max-width:600px) {
+
+            html,
+            body {
+                width: 100%;
+                position: relative;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            .header img {
+                width: 100%;
+            }
+
+            .text-cols>div {
+                width: 100%;
+                float: none;
+                clear: both;
+            }
+
+            .text-cols>div:nth-child(2) {
+                margin: 0;
+            }
+
+            .portfolio ul {
+                padding: 0;
+                width: 100%;
+            }
+
+            .portfolio ul li {
+                margin: 0;
+                float: left;
+            }
+
+            .portfolio img {
+                width: 50%;
+            }
+
+            .updates>div {
+                width: 100%;
+            }
+
+            .footer>div>div {
+                width: 100%;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="topbar"></div>
+        <div class="container navbar">
+            <div>
+                <img src="images/header-logo.png" alt="">
+            </div>
+            <div>
+                <a href="mailto:info@CreativeStudio.com">info@CreativeStudio.com</a>
+                <ul>
+                    <li><a href="#" class="active">home</a></li>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">portfolio</a></li>
+                    <li><a href="#">services</a></li>
+                    <li><a href="#">blog</a></li>
+                    <li><a href="#">contact us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container header">
+            <img src="images/banner.jpg" alt="">
+        </div>
+        <div class="container text-cols">
+            <div>
+                <h2><i class="bi bi-arrow-right"></i> about us</h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada
+                    porta posuere quis
+                    massa. Nunc vitae purus non augue scelerisque ultricies vitae et velit. Sed vitae lectus id sem
+                    lobortis scelerisque.
+                    Praesent eget consequat libero.</p>
+                <a href="#"><i class="bi bi-arrow-right"></i> read</a>
+            </div>
+            <div>
+                <h2><i class="bi bi-arrow-right"></i> our Benefits</h2>
+                <hr>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci
+                        malesuada porta posuere quis
+                        massa.</li>
+
+                    <li>Nunc vitae purus non augue scelerisque ultricies vitae et velit. Sed vitae lectus id sem
+                        lobortis scelerisque. Praesent
+                        eget consequat</li>
+
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci
+                        malesuada porta posuere quis
+                        massa.</li>
+                </ul>
+            </div>
+            <div>
+                <h2><i class="bi bi-arrow-right"></i> testimonials</h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada
+                    porta posuere quis
+                    massa. Nunc vitae purus non augue scelerisque ultricies vitae et velit. Sed vitae lectus id sem
+                    lobortis scelerisque.</p>
+                <p><em>Rafi, Graphicsfuel.com</em></p>
+            </div>
+        </div>
+        <div class="container portfolio">
+            <h2><i class="bi bi-arrow-right"></i> our portfolio</h2>
+            <ul>
+                <li><img src="images/portfolio1.jpg" alt=""></li>
+                <li><img src="images/portfolio2.jpg" alt=""></li>
+                <li><img src="images/portfolio3.jpg" alt=""></li>
+                <li><img src="images/portfolio4.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="container updates">
+            <div>
+                <h4><i class="bi bi-arrow-right"></i> blog updates</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis nulla id orci malesuada
+                    porta posuere quis<br>massa. Nunc vitae purus non augue scelerisque ultricies vitae et velit. Sed
+                    vitae lectus id sem lobortis scelerisque. Praesent<br>eget consequat libero.</p>
+            </div>
+            <div>
+                <h4><i class="bi bi-arrow-right"></i> connect with us</h4>
+                <ul>
+                    <li><a href="#"><img src="images/twitter.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/facebook.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/flicker.png" alt=""></a></li>
+                    <li><a href="#"><img src="images/rss.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div>
+                    <p><a href="#">Home</a> | <a href="#">About Us</a> | <a href="#">Portfolio</a> | <a
+                            href="#">Services</a> | <a href="#">Blog</a> | <a href="#">Contact Us</a></p>
+                    <p>&copy; 2010 CreativeStudio. All Rights Reserved</p>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="images/footer-logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
